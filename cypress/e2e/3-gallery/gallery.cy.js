@@ -1,11 +1,10 @@
-
 describe('Gallery Page', () => {
    beforeEach(() => {
       // Visit the gallery page before each test
-      cy.visit('/gallery');
+      cy.visit('http://192.168.0.3:5173/gallery');
    });
 
-   it('should load the gallery page', () => {
+   it('page title and subtitle should be visible', () => {
       // Ensure the page title and subtitle are visible
       cy.contains('Our Gallery').should('be.visible');
       cy.contains('See Our Work').should('be.visible');
@@ -13,7 +12,7 @@ describe('Gallery Page', () => {
 
    it('should display all images by default', () => {
       // Ensure all images are visible on page load
-      cy.get('img').should('have.length', 9); // Assuming there are 9 images in total
+      cy.get('.gallery-img').should('have.length', 9); // Assuming there are 9 images in total
    });
 
    it('should filter images by type', () => {
@@ -21,19 +20,19 @@ describe('Gallery Page', () => {
       cy.contains('button', 'Food').click();
 
       // Ensure only food images are displayed
-      cy.get('img').should('have.length', 5); // Assuming 5 food images
+      cy.get('.gallery-img').should('have.length', 5); // Assuming 5 food images
 
       // Click on the 'Drink' filter button
       cy.contains('button', 'Drink').click();
 
       // Ensure only drink images are displayed
-      cy.get('img').should('have.length', 4); // Assuming 4 drink images
+      cy.get('.gallery-img').should('have.length', 4); // Assuming 4 drink images
 
       // Click on the 'All' button to reset the filters
       cy.contains('button', 'All').click();
 
       // Ensure all images are visible again
-      cy.get('img').should('have.length', 9);
+      cy.get('.gallery-img').should('have.length', 9);
    });
 
    it('should apply active filter button styles', () => {
@@ -58,8 +57,8 @@ describe('Gallery Page', () => {
 
    it('should apply fade-in animation to images', () => {
       // Assuming the fade-in animation adds a class like 'fade-in'
-      cy.get('img').each(($el) => {
-         cy.wrap($el).should('have.class', 'fade-in');
+      cy.get('.gallery-img').each(($el) => {
+         cy.wrap($el).should('have.class', 'fade-in-list');
       });
    });
 });

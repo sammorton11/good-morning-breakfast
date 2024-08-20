@@ -49,6 +49,7 @@ const Contact = () => {
       try {
          const response = await mockSendEmail(formData, "success");
          setFormStatus(response.message);
+         console.log(formData);
       } catch (error) {
          setFormStatus(error.message);
       }
@@ -69,12 +70,12 @@ const Contact = () => {
                         <div className="relative h-full">
                            <img
                               src="https://images.unsplash.com/photo-1529940122574-0096689bc5cf?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                              alt="ContactUs tailwind section"
+                              alt="Contact Us section"
                               className="w-full h-full lg:rounded-l-2xl rounded-2xl bg-blend-multiply bg-indigo-700"
                            />
-                           <h1 className="font-manrope text-white text-4xl font-bold leading-10 absolute top-11 left-11">
+                           <h2 id="contact-section-heading" className="font-manrope text-white text-4xl font-bold leading-10 absolute top-11 left-11">
                               Contact us
-                           </h1>
+                           </h2>
                            <div className="absolute bottom-0 w-full lg:p-11 p-5">
                               <div className="bg-white rounded-lg p-6 block">
                                  <a href="javascript:;" className="flex items-center mb-6">
@@ -200,7 +201,7 @@ const Contact = () => {
                               Preferred method of communication
                            </h4>
                            <div className="flex">
-                              <div className="flex items-center mr-11">
+                              <div className="flex items-center 11">
                                  <input
                                     id="radio-group-1"
                                     type="radio"
@@ -208,11 +209,11 @@ const Contact = () => {
                                     value="email"
                                     checked={formData.preferredContact === 'email'}
                                     onChange={handleChange}
-                                    className="hidden checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100"
+                                    className="mr-2"
                                  />
                                  <label
                                     htmlFor="radio-group-1"
-                                    className="flex items-center cursor-pointer text-gray-500 text-base font-normal leading-6"
+                                    className="flex items-center cursor-pointer text-gray-500 text-base font-normal leading-6 mr-4"
                                  >
                                     Email
                                  </label>

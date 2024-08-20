@@ -30,7 +30,7 @@ const Navbar = () => {
                  Menu
               </Link>
               <Link to="/about" className="">About</Link>
-              <Link to="/services" className="">Services</Link>
+              {/* <Link to="/services" className="">Services</Link> */}
               <Link to="/gallery" className="">Gallery</Link>
               <Link to="/contact" className="">Contact</Link>
               {/* <ThemeToggle /> */}

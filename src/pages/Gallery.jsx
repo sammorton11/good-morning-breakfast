@@ -75,7 +75,7 @@ const Gallery = () => {
          <section className="p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                {filteredImages.map((image, index) => (
-                  <img src={image.imageUrl} alt="Placeholder" key={index} className="fade-in-list w-full h-full" />
+                  <img src={image.imageUrl} alt="Placeholder" key={index} className="gallery-img fade-in-list w-full h-full" />
                ))}
             </div>
          </section>

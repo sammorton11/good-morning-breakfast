@@ -10,7 +10,7 @@ const Home = () => {
    const heroData = {
       title: "Breakfast Done Right",
       subtitle: "Start Your Day with a Smile",
-      imageUrl: "https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      imageUrl: "https://images.unsplash.com/photo-1720414087171-d5058f5e1400?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
    };
 
    // Data for the extra about sections
